@@ -1,6 +1,6 @@
 package ru.netology.sender;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 import ru.netology.entity.Country;
 import ru.netology.entity.Location;
@@ -10,8 +10,6 @@ import ru.netology.i18n.LocalizationServiceImpl;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MessageSenderImplTest {
 
@@ -29,7 +27,7 @@ class MessageSenderImplTest {
         }};
         String actual = messageSender.send(headers);
 
-        assertEquals("Добро пожаловать", actual);
+        Assertions.assertEquals("Добро пожаловать", actual);
     }
 
     @Test
@@ -45,7 +43,7 @@ class MessageSenderImplTest {
         }};
         String actual = messageSender.send(headers);
 
-        assertEquals("Добро пожаловать", actual);
+        Assertions.assertEquals("Добро пожаловать", actual);
     }
 
     @Test
@@ -62,7 +60,7 @@ class MessageSenderImplTest {
         }};
         String actual = messageSender.send(headers);
 
-        assertEquals("Welcome", actual);
+        Assertions.assertEquals("Welcome", actual);
     }
 
     @Test
@@ -78,6 +76,6 @@ class MessageSenderImplTest {
         }};
         String actual = messageSender.send(headers);
 
-        assertEquals("Welcome", actual);
+        Assertions.assertEquals("Welcome", actual);
     }
 }

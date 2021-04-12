@@ -1,11 +1,8 @@
 package ru.netology.i18n;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 import ru.netology.entity.Country;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class LocalizationServiceImplTest {
 
@@ -19,7 +16,7 @@ class LocalizationServiceImplTest {
         LocalizationService localizationService = Mockito.mock(LocalizationService.class);
         Mockito.when(localizationService.locale(Country.RUSSIA)).thenReturn("Добро пожаловать");
         String actual = localizationService.locale((Country.RUSSIA));
-        assertEquals("Добро пожаловать", actual);
+        Assertions.assertEquals("Добро пожаловать", actual);
     }
 
     @Test
@@ -27,23 +24,22 @@ class LocalizationServiceImplTest {
         LocalizationService localizationService = Mockito.mock(LocalizationService.class);
         Mockito.when(localizationService.locale(Country.USA)).thenReturn("Welcome");
         String actual = localizationService.locale((Country.USA));
-        assertEquals("Welcome", actual);
+        Assertions.assertEquals("Welcome", actual);
     }
 
     @Test
     void localeGermany() {
         LocalizationService localizationService = Mockito.mock(LocalizationService.class);
-        Mockito.when(localizationService.locale(Country.GERMANY)).thenReturn("Добро пожаловать");
+        Mockito.when(localizationService.locale(Country.GERMANY)).thenReturn("Welcome");
         String actual = localizationService.locale((Country.GERMANY));
-        assertEquals("Welcome", actual);
+        Assertions.assertEquals("Welcome", actual);
     }
 
     @Test
     void localeBrazil() {
         LocalizationService localizationService = Mockito.mock(LocalizationService.class);
-        Mockito.when(localizationService.locale(Country.BRAZIL)).thenReturn("Добро пожаловать");
+        Mockito.when(localizationService.locale(Country.BRAZIL)).thenReturn("Welcome");
         String actual = localizationService.locale((Country.BRAZIL));
-        assertEquals("Welcome", actual);
+        Assertions.assertEquals("Welcome", actual);
     }
-
 }
